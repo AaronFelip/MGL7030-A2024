@@ -1,0 +1,54 @@
+/* Réinitialisation des styles par défaut */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Styles pour les éléments spécifiques */
+h1 {
+    font-size: 1.5rem;
+    color: red;
+    text-decoration: underline;
+}
+
+p {
+    font-family: serif;
+}
+
+/* Afin d'aligner verticalement le formulaire, on peut faire appel au flex */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.paragraphe-1 {
+    color: blue; /* #0000ff */
+}
+
+.paragraphe-2 {
+    color: white; /* #fff ou #ffffff */
+    margin: 45px;
+}
+
+.paragraphe-3 {
+    color: red; /* #ff0000 */
+}
+
+#nom {
+    font-weight: bold;
+}
+
+#nom:hover {
+    cursor: pointer;
+}
