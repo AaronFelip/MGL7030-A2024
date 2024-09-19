@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Formulaire de Comité">
+    <meta name="author" content="Aaron F.">
+    <meta name="keywords" content="Formulaire, comité, laboratoire info">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <title>Comité</title>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100">
+
+<!-- Bouton pour ouvrir la modale -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#comite-modal">
+    Ouvrir le formulaire de comité
+</button>
+
+<!-- Formulaire pour le comité-->
+<div class="modal fade" id="comite-modal" tabindex="-1" role="dialog" aria-labelledby="comite-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="comite-modal-label">Comité</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="POST">
+                    <div class="form-group row">
+                        <label for="nom-comite" class="col-sm-4 col-form-label">Nom du comité</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="nom-comite" name="nom-comite">
+                                <option value="Admission">Admission</option>
+                                <option value="Budget">Budget</option>
+                                <option value="Nomination">Nomination</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="role-comite" class="col-sm-4 col-form-label">Rôle dans le comité</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="role-comite" name="role-comite"
+                                   placeholder="Rôle">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="nomination" class="col-sm-4 col-form-label">Nomination</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control datepicker" id="nomination" name="nomination"
+                                   placeholder="AAAA-MM-JJ">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="membre-depuis" class="col-sm-4 col-form-label">Membre depuis le</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control datepicker" id="membre-depuis" name="membre-depuis"
+                                   placeholder="AAAA-MM-JJ">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="jusqu-au" class="col-sm-4 col-form-label">Jusqu'au</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control datepicker" id="jusqu-au" name="jusqu-au"
+                                   placeholder="AAAA-MM-JJ">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="num-resolution" class="col-sm-4 col-form-label">Numéro de résolution du CA</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="num-resolution" name="num-resolution"
+                                   placeholder="Numéro de résolution">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-link">Annuler</a>
+                        <button type="submit" class="btn btn-secondary">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Inclusion des librairies JavaScript nécessaires -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<script>
+    // Activation du datepicker pour les champs de date
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayHighlight: true
+        });
+    });
+</script>
+</body>
+</html>
