@@ -6,7 +6,8 @@ Ce dépot contient les corrections des labos du groupe 30, n'hésitez pas à le 
 - Semaine 1: Pas de labo cette semaine
 - Semaine 2: [Labo1 - HTML et CSS](./LABO1)
 - Semaine 3: [Labo2 - Bootstrap](./LABO2)
-- Semaine 4: à venir
+- Semaine 4: [Labo3 - FLASK](./LABO3)
+- Semaine 4: [Labo3.5 - Python introduction](./LABO3-python)
 - Semaine 5: à venir
 - Semaine 6: à venir
 - Semaine 7: à venir
