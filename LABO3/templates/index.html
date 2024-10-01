@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Premier formulaire Flask</h1>
+    {% if erreur %}
+        {% if text %}
+            Excuse-moi  {{ text }} mais {{ erreur }}
+        {% endif %}
+    {% endif %}
+    <form action="/" method="POST">
+        <label for="username">texte</label>
+        <input type="text" name="username" value="{{ text }}">
+        <br>
+        <label for="champ-radio">Radio 1</label>
+        <input type="radio" name="radio" value="radio 1">
+        <br>
+        <label for="champ-radio">Radio 2</label>
+        <input type="radio" name="radio" value="radio 2">
+        <br>
+        <label for="champ-select">Liste</label>
+        <select name="liste-choix">
+            <option hidden value="">On vous donne le choix</option>
+            <option value="choix1">Choix 1</option>
+            <option value="choix2">Choix 2</option>
+            <option value="choix3">Choix 3</option>
+        </select>
+        <br>
+        <input type="submit" value="soumettre">
+    </form>
+</body>
+</html>
