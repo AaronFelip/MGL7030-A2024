@@ -1,7 +1,6 @@
 from flask import Flask, redirect, render_template, request, url_for
 
-app = Flask(__name__)
-
+app = Flask(__name__, static_url_path="", static_folder="static")
 
 @app.errorhandler(404)
 def page_not_found(error):
@@ -15,23 +14,22 @@ def home():
         return render_template("index.html"), 200
 
     if request.method == "POST":
-        text = request.form['text']
+        username = request.form['username']
         radio = request.form.get('radio')
         select = request.form.get('liste-select')
 
         erreur = "Tous les champs doivent être remplis"
 
-
-        if text == "" or radio is None or select == "":
+        if username == "" or radio is None or select == "":
             return render_template("index.html",
                                    erreur=erreur,
-                                   username=text,
+                                   username=username,
                                    radio=radio,
                                    select=select), 400
         else:
 
             log = open("log.txt", 'w')
-            log.write("text %s " % text + "radio %s " % radio + "select %s " % select )
+            log.write("text %s " % username + "radio %s " % radio + "select %s " % select )
             log.close()
 
             return redirect(url_for('confirmation'), 302)
@@ -40,13 +38,6 @@ def home():
 @app.route('/confirmation')
 def confirmation():
     return render_template("confirmation.html")
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
     app.run()
