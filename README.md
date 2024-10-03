@@ -8,7 +8,7 @@ Ce dépot contient les corrections des labos du groupe 30, n'hésitez pas à le 
 - Semaine 3: [Labo2 - Bootstrap](./LABO2)
 - Semaine 4: [Labo3 - FLASK](./LABO3)
 - Semaine 4: [Labo3.5 - Python introduction](./LABO3-python)
-- Semaine 5: à venir
+- Semaine 5: [Labo4 (voir la solution du labo3) - Post-redirect-get](./LABO3)
 - Semaine 6: à venir
 - Semaine 7: à venir
 - Semaine 8: à venir
