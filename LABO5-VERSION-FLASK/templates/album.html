@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <header>
+        <h1 class="page-title">Albums de {{ artiste }}</h1>
+        <p>Voici la liste des albums disponibles pour cet artiste.</p>
+        <a href="{{ url_for('index') }}" class="btn-link">Retour à la liste des artistes</a>
+    </header>
+
+    <section class="albums-list">
+        {% if albums %}
+            <h2>Liste des Albums</h2>
+            <ul>
+                {% for album in albums %}
+                    <li class="list-item">
+                        <div class="album-item">
+                            <span class="album-title">{{ album['titre'] }}</span>
+                            <span class="album-year">{{ album['annee'] }}</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun album trouvé pour cet artiste.</p>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}

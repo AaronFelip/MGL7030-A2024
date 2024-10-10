@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <header>
+        <h1 class="page-title">Liste des Artistes</h1>
+    </header>
+
+    <section class="album-action">
+        <p class="action-description">Ce lien vous permettra d'ajouter les artistes contenus dans le fichier <strong>input.txt</strong> fourni par votre enseignant.</p>
+        <a href="{{ url_for('insert_albums') }}" class="btn-link">Insérer des albums</a>
+    </section>
+
+    <section class="artists-list">
+        {% if artistes %}
+            <h2>Artistes disponibles</h2>
+            <ul>
+                {% for artiste in artistes %}
+                    <li class="list-item">
+                        <a href="{{ url_for('albums_par_artiste', artiste_id=artiste['id']) }}" class="list-link">
+                            <div class="artist-item">
+                                <span class="artist-name">{{ artiste['name'] }}</span>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun artiste trouvé.</p>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}

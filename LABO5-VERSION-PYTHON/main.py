@@ -1,4 +1,3 @@
-# coding=utf-8
 from database import Database
 
 # On commence par définir une instance de la classe Databse
@@ -18,13 +17,7 @@ def ecrire_db():
         # Par mesure de sécurité toujours fermer les fichiers après traitement
         infile.close()
 
-
-
 if __name__ == "__main__":
     ecrire_db()
     lire_db()
-    # Pour visualiser les changemets ayant été faits sur la base de données
-    #db.get_all_artistes()
-
-    # Ne jamais oublier de fermer la connexion avec la base de données
     db.disconnect()
