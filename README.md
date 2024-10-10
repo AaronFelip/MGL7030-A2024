@@ -9,7 +9,7 @@ Ce dépot contient les corrections des labos du groupe 30, n'hésitez pas à le 
 - Semaine 4: [Labo3 - FLASK](./LABO3)
 - Semaine 4: [Labo3.5 - Python introduction](./LABO3-python)
 - Semaine 5: [Labo4 (voir la solution du labo3) - Post-redirect-get](./LABO3)
-- Semaine 6: à venir
+- Semaine 6: [Labo5 - Sqlite3(./LABO5)
 - Semaine 7: à venir
 - Semaine 8: à venir
 - Semaine 9: à venir
