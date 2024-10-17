@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% block content%}
+<main>
+    <div class="hero-text-wrapper">
+        <div class="hero-text-container">
+            <div class="hero-text-format">
+                Veuillez vous inscrire
+            </div>
+        </div>
+    </div>
+    {% if message_erreur %}
+    <div class="error-message-wrapper">
+        <div class="error-message-container">
+            <div class="error-message-format">
+                {{ message_erreur }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="form-wrapper">
+        <div class="form-container">
+            <form action='/' method='POST'>
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" value="{{nom}}">
+                <br>
+                <label for="prenom">Prénom</label>
+                <input type="text" name="prenom" id="prenom" value="{{prenom}}">
+                <br>
+                <label for="courriel">Courriel</label>
+                <input type="text" id="courriel" name="courriel" value="{{courriel}}">
+                <br>
+                <label for="validation-courriel">Validation du courriel</label>
+                {% if courriel_erreur %}
+                <span id="erreur">{{courriel_erreur}}</span>
+                {% endif %}
+                <input type="text" id="validation-courriel" name="validation-courriel">
+                <br>
+                <label for="mdp">Mot de passe</label>
+                {% if mdp_erreur %}
+                <span id="erreur">{{mdp_erreur}}</span>
+                {% endif %}
+                <input type="text" id="mdp" name="mdp">
+                <br>
+                <input type="submit" value="S'inscrire">
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

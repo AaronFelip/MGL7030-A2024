@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Un site permettant l'ajout de nouveaux utilisateurs dans une base de données">
+    <meta name="keywords" content="login, création de compte, base de données, INF5190">
+    <meta name="author" content="Donald Trump">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+<header class="header">
+    <a class="logo" href="/">myLogo</a>
+    <nav>
+        <input type="checkbox" id="show-menu-input-checkbox" role="button" aria-pressed="true">
+        <label for="show-menu-input-checkbox" id="main-menu-toggler" class="flex-container flex-vcenter flex-hcenter">
+            <span id="main-menu-toggler-icon" class="flex-grow"></span>
+        </label>
+        <ul class="main-menu accordion" id="main-menu">
+            <li><a href="/se-connecter">Se connecter</a></li>
+        </ul>
+    </nav>
+</header>
+{% block content %}{% endblock %}
+</body>
+</html>

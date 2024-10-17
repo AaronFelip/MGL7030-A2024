@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content%}
+<main>
+  <div class="confirmation-wrapper">
+    <div class="confirmation-container">
+      <div class="confirmation-message-container">
+        <div class="confirmation-message-format">
+          {% if prenom %}
+          Bienvenu {{ prenom }}!
+          <br>
+          Vous vous êtes inscrit avec succès
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

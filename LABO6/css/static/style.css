@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;800&display=swap');
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Lato, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+header ul, menu, dir {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    -webkit-padding-start: 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0 0 0);
+}
+
+.erreur-msg {
+    color: red;
+    font-weight: 600;
+}
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+::placeholder {
+    color: #cecece;
+}
+
+textarea {
+    height: 250px;
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 5px 0 0 5px;
+    font-size: 18px;
+    box-shadow: 1px 1px 8px 1px #08070740;
+    border: none;
+    font-family: 'Poppins', Lato, sans-serif;
+}
+
+/*
+  LAYOUT
+/*-----------------------------------------------------*/
+:root {
+    --maxSiteWidth: 100%;
+}
+
+main {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 75px;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(21 26 95);
+    height: 80px;
+    border-bottom: rgba(44, 44, 44, .6) 1px solid;
+    margin: 0 auto 0 auto;
+    padding: 0px 25px;
+}
+
+h2 {
+    margin: 0px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.logo {
+    font-size: 42px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 700;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    height: 65px;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 1px 1px 5px 0px #0807074a;
+    border: none;
+    flex-grow: 2;
+    margin-bottom: 25px;
+}
+
+input[type=submit] {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    height: 65px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #151a5f;
+    box-shadow: 1px 1px 8px 1px #bfbfbf40;
+    border: none;
+    width: 180px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=submit]:hover {
+    background-color: #151a5f;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.5s;
+}
+
+.hero-text-wrapper{
+    display: flex;
+    justify-content: stretch;
+    width: 100%;
+    flex-direction: column;
+    flex: 1;
+}
+
+.hero-text-container{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    padding: 5px;
+}
+
+.hero-text-format{
+    font-size: 45px;
+    font-weight: bold;
+    color: #151a5f;
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.error-message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #e8e8e8;
+    margin: auto;width: 50%;
+    padding: 5px;
+    border: 1px solid #cecccc;
+    border-radius: 5px;
+}
+
+.error-message-format {
+    font-size: 17px;
+    color: #ec5d5d;
+}
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: stretch;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+}
+#erreur{
+    color: #ff6b6b;
+}
+.confirmation-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.confirmation-container{
+    display: flex;
+    flex-direction: column;
+    background: aliceblue;
+    height: 100vh;
+}
+
+.confirmation-message-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.confirmation-message-format{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: #151a5f;
+}
+
+/*
+   MAIN MENU MOBILE FIRST
+/*-------------------------------------------------------*/
+nav {
+    flex: 1 auto;
+}
+
+.main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 80px auto 0 auto;
+    height: 15%;
+    width: 100%;
+    flex-flow: column nowrap;
+    align-content: stretch;
+    display: none;
+}
+
+.main-menu a {
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    display: flex;
+    background: transparent;
+    color: #f6f6f6;
+    font-weight: 600;
+}
+
+.main-menu > li {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px dotted rgba(22, 22, 22, .3);
+    background: rgba(255, 255, 255, 1);
+}
+
+/*
+  MAIN MENU TOGGLE BUTTON
+/*-----------------------------------------------------*/
+/*Hide checkbox*/
+#show-menu-input-checkbox {
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+#show-menu-input-checkbox:checked ~ .main-menu {
+    display: flex;
+}
+
+#main-menu-toggler {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-menu-toggler-icon:after,
+#main-menu-toggler-icon:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -9px;
+}
+
+#main-menu-toggler-icon:after {
+    top: 9px;
+}
+
+#main-menu-toggler-icon {
+    position: relative;
+    display: block;
+}
+
+#main-menu-toggler-icon,
+#main-menu-toggler-icon:after,
+#main-menu-toggler-icon:before {
+    width: 100%;
+    height: 5px;
+    background-color: #ffffff;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 2px;
+}
+
+/* on menu activation */
+#show-menu-input-checkbox:checked ~ #main-menu-toggler > #main-menu-toggler-icon {
+    background-color: transparent;
+}
+
+#show-menu-input-checkbox:checked ~ #main-menu-toggler > #main-menu-toggler-icon:before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#show-menu-input-checkbox:checked ~ #main-menu-toggler > #main-menu-toggler-icon:after {
+    transform: rotate(-45deg) translate(7px, -8px);
+}
+
+/*
+  MAIN MENU ON WIDE SCREENS
+/*----------------------------------------------------------*/
+@media only screen and (min-width: 1080px) {
+    header, .main-menu, nav, main, article, footer {
+        max-width: var(--maxSiteWidth);
+    }
+
+    /**HIDE THE MENU TOGGLER**/
+    #main-menu-toggler {
+        display: none;
+    }
+
+    /**APPLY HORIZONTAL BAR STYLING TO THE MAIN MENU**/
+    .main-menu {
+        position: initial;
+        display: flex;
+        flex-flow: row nowrap;
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 80px;
+        margin-top: 0;
+        margin-right: 15px;
+    }
+
+    .main-menu > li {
+        flex: 1 0 auto;
+        border-bottom: none;
+        background: transparent;
+        align-items: initial;
+    }
+
+    .main-menu a {
+        font-size: 22px;
+        width: auto;
+        justify-content: flex-end;
+        padding-left: 16px;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .blog-container {
+        margin: 0 5%;
+    }
+    .blog-wrapper {
+        margin: 0 5%;
+    }
+    .main-menu a {
+        color: #000;
+    }
+    .main-menu {
+        box-shadow: 0 0 16px 6px #00000042;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    .hero-text-format {
+        font-size: 45px;
+    }
+    .post-right-wrapper {
+        flex-direction: column;
+    }
+    .confirmation-message-format {
+        font-size: 30px;
+    }
+    .hero-text-format {
+        font-size: 25px;
+    }
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 5px;
+        width: 97%;
+    }
+    .logo {
+        font-size: 30px;
+    }
+    .error-message-container {
+        width: 97%;
+    }
+}
