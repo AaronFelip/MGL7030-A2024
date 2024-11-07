@@ -1,5 +1,8 @@
-//valider format de la date AAAA-MM-JJ
+/**
+ * Voici le script revu et corriger vous permettant de bien réussir ce laboratoire
+ */
 
+//valider format de la date AAAA-MM-JJ
 function validerDate() {
     let format= /[0-9]{4}-[0-1][0-9]-[0-3][0-9]/
     let date = document.getElementById('date').value;
@@ -11,8 +14,8 @@ function champsRemplis() {
     let estRempli = true;
     const ids = ["nom", "prenom", "date", "code", "genre"];
     for (var i=0; i < ids.length; i++) {
-        let champ = document.getElementById(ids[i]).value;
-        if (champ == null || champ.lenght < 1){
+        let champs = document.getElementById(ids[i]).value;
+        if (champs == null || champs.length < 1){
             estRemplis = false;
         }
     }
@@ -73,7 +76,7 @@ function validerCode () {
     return true;
 }
 
-function valider(){
+function valider(event){
 
     let reussi = true;
     let errDate = document.getElementById('erreur-date');
@@ -85,17 +88,17 @@ function valider(){
         errDate.innerHTML = "La date est invalide!!!"
         reussi = false;
     } else {
-        errDate.innerHTMl = "";
+        errDate.innerHTML = "";
     }
 
-    if(!champsRemplis){
+    if(!champsRemplis()){
         errChamps.innerHTML = "1 ou plusieurs champs sont vides!!!"
         reussi = false;
     } else {
         errChamps.innerHTML = "";
     }
 
-    if(!validerGenre){
+    if(!validerGenre()){
         errGenre.innerHTML = "Le genre est invalide!!!"
         reussi = false;
     } else {
@@ -109,12 +112,13 @@ function valider(){
         errCode.innerHTML = ""
     }
 
-    // si toutes les validations reussissent, on submit, sinon on reste sur la page
+    // Si toutes les validations échouent, on empêche l'envoi du formulaire
     if (reussi) {
-        let form = document.getElementById("formulaire");
-        form.submit();
+        document.getElementById("formulaire").submit();
     } else {
-        let errGlobal = document.getElementById("erreur-global");
-        errGlobal.innerHTML = "1 ou plusieurs champs sont invalides!!!";
+        document.getElementById("erreur-global").innerHTML = "1 ou plusieurs champs sont invalides!!!";
     }
 }
+
+// Ajout de l'écouteur d'événement
+document.getElementById("formulaire").addEventListener("submit", valider);
