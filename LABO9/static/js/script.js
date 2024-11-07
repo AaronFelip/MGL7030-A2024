@@ -19,13 +19,13 @@ function champsRemplis() {
             estRemplis = false;
         }
     }
-    return estRemplis;
+    return estRempli;
 }
 
 // Valider le genre F ou M
 function validerGenre() {
     let genre = document.getElementById('genre').value.toUpperCase();
-    return (genre == "M" || genre == "F" );
+    return (genre === "M" || genre === "F" );
 }
 
 function validerCode () {
@@ -54,7 +54,7 @@ function validerCode () {
 
     // verifier que les 2 premiers chiffre correspondent au jour de naissance
     let jour = date.substr(8);
-    if (code.substr(4,2) != jour) {
+    if (code.substr(4,2) !== jour) {
         return false;
     }
 
@@ -121,4 +121,9 @@ function valider(event){
 }
 
 // Ajout de l'écouteur d'événement
-document.getElementById("formulaire").addEventListener("submit", valider);
+document.addEventListener("DOMContentLoaded", function() {
+    const element = document.getElementById("formulaire");
+    if (element) {
+        element.addEventListener("submit", valider);
+    }
+});

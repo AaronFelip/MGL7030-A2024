@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Validation de formulaire JS</h1>
+<form id="formulaire" method="POST">
+    <p id="erreur-global"></p>
+    <label for="nom">Nom : </label>
+    <input type="text" id="nom" name="nom" value="{{ nom }}">
+    <br>
+    <label for="prenom">Prénom : </label>
+    <input type="text" id="prenom" name="prenom" value="{{ prenom }}">
+    <br>
+    <label for="date">Date de naissance : </label>
+    <input type="text" id="date" name="date" value="{{ date }}">
+    <span id="erreur-date"></span>
+    <br>
+    <label for="code">Code permanent : </label>
+    <input type="text" id="code" name="code" value="{{ code }}">
+    <span id="erreur-code"></span>
+    <br>
+    <label for="genre">Genre : </label>
+    <input type="text" id="genre" name="genre" value="{{ genre }}">
+    <span id="erreur-genre"></span>
+    <br>
+    <p id="erreur-champs-vides"></p>
+    <button type="button" onclick="valider(event)">Soumettre</button>
+</form>
+{% endblock %}

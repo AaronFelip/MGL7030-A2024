@@ -19,7 +19,7 @@ Ce dépot contient les corrections des labos du groupe 30, n'hésitez pas à le 
 - Semaine 12: à venir
 - Semaine 13: à venir
 - Semaine 14: à venir
-- Semaine 15: à venir
+- Semaine 15: Examen final - pas de labo cette semaine
 
 ## Me rejoindre:
 Si vous avez des questions sur la matière vu en classe ou dans les labos, je vous recommande de poser vos questions dans le Mattermost du cours. Si vous avez besoin d'une aide personnalisé vous pouvez me rejoindre par [courriel](mailto:osorio_arancibia.aaron@courrier.uqam.ca?subject=Aide%20labo%20IMGL7030)  .
