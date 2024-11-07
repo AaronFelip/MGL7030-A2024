@@ -12,9 +12,9 @@ Ce dépot contient les corrections des labos du groupe 30, n'hésitez pas à le 
 - Semaine 6: [Labo5 - Sqlite3 version Python](./LABO5-VERSION-PYTHON)
 - Semaine 6: [Labo5 - Sqlite3 version Flask](./LABO5-VERSION-FLASK)
 - Semaine 7: [Labo6 - Login](./LABO6)
-- Semaine 8: à venir
-- Semaine 9: à venir
-- Semaine 10: à venir
+- Semaine 8: Pas de labo cette semaine
+- Semaine 9: Labo 8 - Aide au devoir 2
+- Semaine 10: [Labo9 - Flask + Javascript](./LABO9)
 - Semaine 11: à venir
 - Semaine 12: à venir
 - Semaine 13: à venir
