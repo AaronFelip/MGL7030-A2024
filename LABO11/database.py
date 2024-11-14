@@ -16,7 +16,7 @@ class Database:
 
     def get_livres(self):
         cursor = self.get_connection().cursor()
-        cursor.execute('SELECT * FROM livres')
+        cursor.execute('SELECT * FROM livre')
         livres = cursor.fetchall()
         return (Livre(livre[0], livre[1],livre[2], livre[3], livre[4], livre[5]) for livre in livres)
 

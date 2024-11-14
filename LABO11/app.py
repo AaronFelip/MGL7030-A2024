@@ -47,6 +47,37 @@ def create_livres():
     livre = get_db().set_livre(livre)
     return jsonify(livre.min_info()), 201
 
+@app.route('/api/livres', methods=['GET'])
+def get_livres():
+    livres = get_db().get_livres()
+    return jsonify([livre.min_info() for livre in livres])
+
+@app.route('/api/livre/<int:id>', methods=['DELETE'])
+def delete_livre(id):
+    livre = get_db().get_livre(id)
+    if livre is None:
+        return "aucun livre", 404
+    else:
+        get_db().delete_livre(id)
+        return "livre supprimé", 200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
