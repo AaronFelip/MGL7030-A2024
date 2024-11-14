@@ -23,10 +23,49 @@ def close_connection(exception):
         db.disconnect()
 
 
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+@app.errorhandler(JsonValidationError)
+def validation_error(e):
+    errors = [validation_error.message for validation_error in e.errors]
+    return jsonify({'errors': e.message, 'errors': errors}), 400
 
 
-if __name__ == '__main__':
-    app.run()
+#Ne fonctionne pas pour le moment
+@app.route('/api/livre/<int:id>', methods=['GET'])
+def get_livre(id):
+    livre = get_db().get_livre(id)
+    if livre is None:
+        return "aucun livre", 404
+    else:
+        return jsonify(livre.all_info())
+
+
+@app.route('/api/livre', methods=['POST'])
+@schema.validate(insert_schema)
+def create_livres():
+    data = request.get_json()
+    livre = Livre(None, data["titre"], data["auteur"], data["annee"], data["nb_pages"], data["nb_chapitres"])
+    livre = get_db().set_livre(livre)
+    return jsonify(livre.min_info()), 201
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
