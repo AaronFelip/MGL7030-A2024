@@ -26,10 +26,10 @@ def close_connection(exception):
 @app.errorhandler(JsonValidationError)
 def validation_error(e):
     errors = [validation_error.message for validation_error in e.errors]
-    return jsonify({'errors': e.message, 'errors': errors}), 400
+    return jsonify({'error': e.message, 'errors': errors}), 400
 
 
-#Ne fonctionne pas pour le moment
+
 @app.route('/api/livre/<int:id>', methods=['GET'])
 def get_livre(id):
     livre = get_db().get_livre(id)
